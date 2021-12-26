@@ -1,0 +1,11 @@
+
+P
+java:S1118	":Add a private constructor to hide the implicit public one.(â„¾È
+E
+java:S1172
+"(Remove this unused method parameter "n".(ò˜¿½8ùëÓšŞ/
+A
+java:S2185"&Remove this silly call to "Math.round"(ªİç÷úÿÿÿÿ
+\
+java:S2184"ACast one of the operands of this division operation to a "float".(ªİç÷úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Úø
