@@ -2,18 +2,22 @@ package Folder;
 
 public class RepeatedString {
 
-    public static int calculate(String s, int n) {
-        StringBuilder stringBuilder = new StringBuilder();
-        int numOfTimesToRepeat = (int) (Math.ceil((double) n / (double) s.length()));
-        String infiniteString = new String(new char[numOfTimesToRepeat]).replace("\0", s);
-        char[] infiniteStringCharArray = infiniteString.toCharArray();
-
-        for (int a = 0; a < n; a++) {
-            stringBuilder.append(infiniteStringCharArray[a]);
+    public static long calculate(String s, int n) {
+        long numOfOccurrences = s.replaceAll("[^a]", "").length();
+        if (numOfOccurrences == 0) {
+            return n;
         }
 
-        long y = stringBuilder.toString().chars().filter(character -> character == 'a').count();
+        long remainder = n % s.length();
+        long numOfRepetitions = n / s.length();
+        long finalValue = numOfRepetitions * numOfOccurrences;
 
-        return (int) y;
+        for (int i = 0; i < remainder; i++) {
+            if (s.charAt(i) == 'a') {
+                finalValue++;
+            }
+        }
+
+        return finalValue;
     }
 }
